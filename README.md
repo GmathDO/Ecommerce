@@ -12,3 +12,7 @@ Este proyecto es un ecommerce básico construido con React, utilizando diversas 
 - CRUD de productos: Crear, editar y eliminar productos desde una API pública.
 
 La API proviene de Platzi, es publica y utilizada por muchos desarrolladores de latinoamerica, por ende, cualquier alteracion en la pagina es compartida, ya sean categorias, productos, imagenes, etc. La API maneja un filtro ante cualquier insulto o agravantes pero esto no impide que ciertos errores puedan aparecer, sin embargo, no afecta al ecommerce ni su experiencia.
+
+Para poder acceder al Dashboard y visualizar el contenido se debe iniciar sesion como admin con el
+- **Usuario: admin:**
+- **Contraseña: 1234**
