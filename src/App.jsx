@@ -4,7 +4,7 @@ import { ApiProvider } from './context/api'
 import { CartProvider } from './context/cart'
 import { Header } from "./components/Header"
 import { Home } from './pages/Home'
-import { LoginPage } from './pages/loginPage/LogInPage'
+import { LoginPage } from './pages/loginPage/LoginPage'
 import { ProtectedRoute } from './ProtectedRoute'
 import { Dashboard } from './pages/dashboard/Dashboard'
 import { Product } from './components/Product'
