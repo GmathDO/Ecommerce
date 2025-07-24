@@ -1,4 +1,4 @@
-import './LogInPage.css'
+import './LoginPage.css'
 import { useState } from 'react'
 import { useAuth } from '../../context/auth'
 import { useNavigate } from 'react-router'
