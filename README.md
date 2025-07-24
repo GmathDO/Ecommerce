@@ -1,12 +1,14 @@
-# React + Vite
+# Ecommerce con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un ecommerce básico construido con React, utilizando diversas librerías para mejorar la experiencia del usuario y la accesibilidad. Implementa navegación con `react-router`, manejo de notificaciones con `react-toastify`, manejo de iconos con `react-icons`, y mejora de la accesibilidad con `react-helmet`. Además, utiliza el Context API para manejar el estado global de los productos y su CRUD (crear, leer, actualizar, eliminar) interactuando con una API pública.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React Router** para la navegación entre páginas.
+- **React Icons** para iconos interactivos.
+- **React Toastify** para mostrar notificaciones (mensajes emergentes) al usuario.
+- **React Helmet** para mejorar la accesibilidad y SEO.
+- **Context API** para el manejo global de estado (productos).
+- CRUD de productos: Crear, editar y eliminar productos desde una API pública.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+La API proviene de Platzi, es publica y utilizada por muchos desarrolladores de latinoamerica, por ende, cualquier alteracion en la pagina es compartida, ya sean categorias, productos, imagenes, etc. La API maneja un filtro ante cualquier insulto o agravantes pero esto no impide que ciertos errores puedan aparecer, sin embargo, no afecta al ecommerce ni su experiencia.
