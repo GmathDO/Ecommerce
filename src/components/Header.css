@@ -1,5 +1,5 @@
 .header{
-    background: #242424;
+    background: #fff;
 }
 
 .header nav{
@@ -7,4 +7,91 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+}
+
+.header-title{
+    text-decoration: none;
+    color: #000;
+}
+
+.header-search{
+    width: 30%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #000;
+}
+
+.header-search input{
+    width: 90%;
+    height: 100%;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.header-panel-section{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-login-button{
+    height: 2.5em;
+    border: 1px solid #fff;
+    transition: all .3s ease;
+}
+
+.header-login-button:active{
+    background: #fff;
+    color: #000;
+}
+
+.header-login-button:hover{
+    scale: 1.05;
+}
+
+.header-user-button{
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.header-user-button:hover {
+    scale: 1.1;
+}
+
+@media (max-width: 585px){
+    .header nav{
+        flex-wrap: wrap;
+        column-gap: 3.3rem;
+        row-gap: .5rem;
+        padding-bottom: 25px;
+    }
+
+    .header-search{
+        order: 2;
+        width: 100%;
+        margin: auto;
+    }
+
+    .header-panel-section{
+        order: 1;
+    }
+}
+
+@media (max-width: 470px){
+    .header nav{
+        column-gap: 0;
+    }
+    
+    .header-panel-section{
+        gap: .3rem;
+    }
+}
+
+@media (max-width: 385px){
+    .header-title{
+        font-size: .8rem;
+    }
 }

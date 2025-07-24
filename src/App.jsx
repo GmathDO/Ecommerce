@@ -1,52 +1,57 @@
-import { useEffect, useState } from "react"
+import { BrowserRouter, Routes, Route } from 'react-router'
+import { AuthProvider } from './context/auth'
+import { ApiProvider } from './context/api'
+import { CartProvider } from './context/cart'
 import { Header } from "./components/Header"
-import { Cart } from "./components/Cart"
-import { Products } from "./components/Products"
-
-function useCart(){
-    const [cart, setCart] = useState([])
-
-    const addToCart = product => {
-        const productInCartIndex = cart.findIndex(item => item.id === product.id)
-        console.log(productInCartIndex)
-
-        if(productInCartIndex >= 0){
-            const newCart = structuredClone(cart)
-            newCart[productInCartIndex].quantity += 1
-            return setCart(newCart)
-        }
-
-        setCart(prevState => ([...prevState, {...product, quantity: 1}]))
-        
-    }
-    
-    const clearCart = () => {
-        setCart([])
-    }
-
-    const removeFromCart = product => {
-        setCart(prevState => prevState.filter(item => item.id !== product.id))
-    }
-
-    return({cart, setCart, addToCart, clearCart, removeFromCart})
-}
+import { Home } from './pages/Home'
+import { LoginPage } from './pages/loginPage/LogInPage'
+import { ProtectedRoute } from './ProtectedRoute'
+import { Dashboard } from './pages/dashboard/Dashboard'
+import { Product } from './components/Product'
+import { ToastContainer, Bounce } from 'react-toastify'
+import { Helmet } from 'react-helmet'
 
 function App() {
 
-  const [products, setProducts] = useState([])
-  const { cart, addToCart, removeFromCart, clearCart } = useCart()
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products').
-      then(res => res.json())
-      .then(json => setProducts(json));    
-  }, [])
-
   return (
     <>
-      <Header />
-      <Cart cart={cart} addToCart={addToCart} clearCart={clearCart} />
-      <Products products={products} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
+      <AuthProvider>
+        <ApiProvider>
+          <CartProvider>
+            <BrowserRouter>
+              <Header />
+              <Helmet>
+                <title>Shopping</title>
+                <meta name='description' content='Buy some products on this beautiful website'/>
+                <meta name='keywords' content='buy, buy products, shopping' />
+              </Helmet>
+              <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/dashboard' element={
+                  <ProtectedRoute>
+                    <Dashboard/>
+                  </ProtectedRoute>
+                }/>
+                <Route path='/:id' element={<Product />} />
+              </Routes>
+              <ToastContainer 
+                position='bottom-left' 
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition={Bounce}
+              />
+            </BrowserRouter>
+          </CartProvider>
+        </ApiProvider>
+      </AuthProvider>
     </>
   )
 }

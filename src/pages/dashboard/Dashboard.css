@@ -1,0 +1,134 @@
+.dashboard-container{
+    color: #000;
+}
+
+.dashboard-container input{
+    border-radius: 5px;
+    border: .5px solid #000;
+}
+
+.dashboard-container img{
+    border-radius: 4px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    object-fit: cover;
+    background: #fff;
+}
+
+.dashboard-add-formulario{
+    width: 70%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 40px auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.modal{
+    display: none;
+}
+
+.modal--active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999px;
+}
+
+.dashboard-edit-formulario{
+    min-width: 500px;
+    min-height: 90px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin: auto;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 50px 0;
+    position: relative;
+}
+
+.close-button{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.close-button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.close-button:active{
+    color: #fff;
+    background: #000;
+}
+
+.input-label-div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.input-label-div textarea{
+    resize: none;
+}
+
+.tabla-productos{
+    margin: auto;
+}
+
+.img-tabla{
+    width: 200px;
+}
+
+.price-tabla{
+    width: 80px;
+}
+
+.actions-tabla{
+    font-size: 1.5rem;
+}
+
+.edit-button:hover{
+    cursor: pointer;
+    border-radius: 10%;
+    background: lightgray;
+}
+
+.delete-button:hover{
+    cursor: pointer;
+    border-radius: 10%;
+    background: lightgray;
+}
+
+@media (max-width: 610px){
+    .title-tabla{
+        font-size: .9rem;
+    }
+
+    .dashboard-edit-formulario{
+        min-width: 350px
+    }
+}
+
+@media (max-width: 450px){
+    .title-tabla{
+        font-size: .6rem;
+    }
+}

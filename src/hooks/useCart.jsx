@@ -1,31 +1,12 @@
-function useCart(){
-    const [cart, setCart] = useState([])
+import { useContext } from "react";
+import { CartContext } from "../context/cart";
 
-    const addToCart = product => {
-        const productInCartIndex = cart.findIndex(item => item.id === product.id)
+export const useCart = () => {
+    const context = useContext(CartContext)
 
-        if(productInCartIndex >= 0){
-            const newCart = structuredClone(cart)
-            newCart[productInCartIndex].quantity += 1
-            return setCart(newCart)
-        }
-
-        setCart(prevState => ([
-            ...prevState, {
-                ...product,
-                quantity: 1
-            }
-        ]))
-
-    }
-    
-    const clearCart = () => {
-        setCart([])
+    if(context === undefined){
+        throw new Error('useCart must be used within contextProvider')
     }
 
-    const removeFromCart = product => {
-        setCart(prevState => prevState.filter(item => item.id !== product.id))
-    }
-
-    return({cart, addToCart, clearCart, removeFromCart})
+    return context
 }

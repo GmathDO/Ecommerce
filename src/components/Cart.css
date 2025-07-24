@@ -2,14 +2,47 @@
     background: #000;
     display: none;
     padding: 32px;
-    position: fixed;
+    position: absolute;
     right: 0;
-    top: 0;
+    top: 90px;
     width: 200px;
+    border-radius: 10px;
+}
+
+.cart-pointer{
+    background: #000;
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    top: -10px;
+    left: 140px;
+    transform: rotate(227deg);
+}
+
+.cart-list{
+    max-height: 725px;
+    overflow: auto;
+}
+
+.cart-list::-webkit-scrollbar{
+    width: 7px;
+}
+
+.cart-list::-webkit-scrollbar-track{
+    background: #2a2a2a;
+}
+
+.cart-list::-webkit-scrollbar-thumb{
+    background: #a9a6a6;
 }
 
 .cart img {
+    border-radius: 4px;
     width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    object-fit: cover;
+    background: #fff;
 }
 
 .cart li {
@@ -29,20 +62,19 @@
 }
 
 .cart-button {
+    display: flex;
     align-items: center;
-    background: #09f;
+    justify-content: center;
+    position: relative;
+    background: #000;
+    color: #fff;
     border-radius: 9999px;
     cursor: pointer;
-    display: flex;
     height: 32px;
-    justify-content: center;
     padding: 4px;
-    position: absolute;
-    right: 8px;
-    top: 15px;
     transition: all .3s ease;
     width: 32px;
-    z-index: 9999;
+    z-index: 9998px;
 }
 
 .cart-button:hover {
@@ -50,6 +82,20 @@
 }
 
 .cart-button ~ input:checked ~ .cart {
-    height: 100%;
+    max-height: 82%;
     display: block;
+}
+
+.quantity-number{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 20px;
+    margin: 0;
+    background: rgb(233, 55, 55);
+    border-radius: 9999px;
+}
+
+.clear-button{
+    margin-top: 15px;
 }

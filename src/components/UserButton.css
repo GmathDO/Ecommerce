@@ -1,0 +1,52 @@
+.user-container{
+    position: relative;
+    height: 2.5rem;
+}
+
+.user-container:hover .dropdown-menu{
+    transform: scaleY(1);
+    transition: 350ms transform 350ms;
+}
+
+.user-button{
+    font-size: 2.5rem;
+    color: #000;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.user-button:hover {
+    scale: 1.1;
+}
+
+.dropdown-menu{
+    width: 100px;
+    max-height: 100px;
+    position: absolute;
+    right: -25px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    color: #000;
+    border-radius: 5px;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 350ms transform 350ms;
+}
+
+.dropdown-menu *:hover{
+    cursor: pointer;
+    background: #dcdada;
+}
+
+.home-button{
+    text-decoration: none;
+    color: #000;
+}
+
+.dropdown-menu button{
+    border: none;
+    background: transparent;
+}

@@ -1,3 +1,9 @@
+@view-transition {
+            navigation: auto;
+            duration: 0.4s;
+            easing: ease-in-out;
+          }
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
