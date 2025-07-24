@@ -9,8 +9,8 @@ export function LoginPage(){
     const { login } = useAuth()
     const navigate = useNavigate()
 
-    const [user, setUser] = useState("")
-    const [password, setPassword] = useState("")
+    const [user, setUser] = useState("admin")
+    const [password, setPassword] = useState("1234")
     const [error, setError] = useState(null)
     const [toggle, setToggle] = useState(1)
 
@@ -45,11 +45,11 @@ export function LoginPage(){
             <form className={isToggle(1) ? 'login-formulario active-content' : 'login-formulario'} onSubmit={handleSubmit}>
                 <section className='login-formulario-section'>
                     <label htmlFor='username' className='login-label'>Usuario</label>
-                    <input type='text' className='login-input' id='username' placeholder='usuario123@hotmail.com' value={user} onChange={(e) => setUser(e.target.value)}/>
+                    <input type='text' className='login-input' id='username' placeholder='admin' value={user} onChange={(e) => setUser(e.target.value)}/>
                 </section>
                 <section className='login-formulario-section'>
                     <label htmlFor='password' className='login-label'>Contraseña</label>
-                    <input type='password' className='login-input' id='password' placeholder='contraseña' value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type='password' className='login-input' id='password' placeholder='1234' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </section>
                 <button type='submit'>Iniciar Sesión</button>
             </form>
